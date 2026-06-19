@@ -173,7 +173,7 @@ Suitable for:
 
 # Cost Optimization Recommendations
 
-## 1. Implement AWS Savings Plans
+## 1. Implement AWS Savings Plan 
 
 For predictable workloads, adopting a one-year Savings Plan can significantly reduce compute expenses.
 
