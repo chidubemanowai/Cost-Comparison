@@ -1,0 +1,13 @@
+Provider Selection Summary
+
+For this project, the cloud provider selection depends on the organization's technical requirements and existing technology investments.
+
+For a Linux-based startup hosting a small web application, Amazon Web Services (AWS) is the preferred option. The estimated monthly cost is slightly lower than Azure for comparable Linux infrastructure. AWS also offers mature cloud-native services, strong support for open-source technologies, and flexible Savings Plans that can reduce long-term operational expenses. These characteristics make AWS attractive for startups seeking to minimize costs while maintaining scalability.
+
+For a Microsoft-centric enterprise environment, Microsoft Azure is the preferred option. Organizations already using Windows Server, Active Directory, Microsoft 365, and related Microsoft technologies can benefit significantly from Azure Hybrid Benefit. This licensing advantage allows existing Windows Server licenses to be reused in Azure, substantially reducing Windows virtual machine costs. Azure also provides seamless integration with enterprise Microsoft products and management tools.
+
+The cost comparison showed that AWS offered the lowest estimated monthly cost for Linux workloads, while Azure became highly competitive for Windows workloads when Hybrid Benefit was applied. Additionally, Azure provides strong enterprise governance, identity management, and compliance capabilities that are valuable for large organizations.
+
+Considering the specific business context, AWS is recommended for Linux-based startups focused on cost efficiency and cloud-native development, while Azure is recommended for enterprises with substantial Microsoft investments seeking to maximize licensing benefits and operational integration.
+
+Regardless of the provider selected, implementing Savings Plans or Reserved Instances and regularly optimizing resource utilization can significantly reduce overall cloud spending.
