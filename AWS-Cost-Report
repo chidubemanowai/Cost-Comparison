@@ -1,0 +1,205 @@
+# AWS Cost Report for Small Web Application
+
+## Overview
+
+This report provides a cost estimate for hosting a small web application on Amazon Web Services (AWS). The application requirements are:
+
+* 2 vCPUs
+* 4 GB RAM
+* 100 GB storage
+* 50 GB monthly outbound data transfer
+* 24/7 availability (730 hours/month)
+
+The estimate uses AWS On-Demand pricing and standard storage services.
+
+---
+
+# Application Specifications
+
+| Resource              | Specification              |
+| --------------------- | -------------------------- |
+| Compute               | 2 vCPU, 4 GB RAM           |
+| Operating System      | Linux                      |
+| Storage               | 100 GB                     |
+| Monthly Data Transfer | 50 GB                      |
+| Availability          | Single-instance deployment |
+
+---
+
+# AWS Services Selected
+
+## Amazon EC2
+
+Amazon EC2 is used to host the application.
+
+Selected Instance:
+
+| Configuration    | Value           |
+| ---------------- | --------------- |
+| Instance Type    | t3.medium       |
+| vCPUs            | 2               |
+| Memory           | 4 GiB           |
+| Operating System | Linux           |
+| Usage            | 730 hours/month |
+
+Estimated Cost:
+
+| Service       | Monthly Cost |
+| ------------- | -----------: |
+| EC2 t3.medium |       $30.37 |
+
+---
+
+## Amazon EBS Storage
+
+Elastic Block Store (EBS) provides persistent storage for the EC2 instance.
+
+Configuration:
+
+| Resource     | Value                     |
+| ------------ | ------------------------- |
+| Storage Type | General Purpose SSD (gp3) |
+| Capacity     | 30 GB                     |
+
+Estimated Cost:
+
+| Service     | Monthly Cost |
+| ----------- | -----------: |
+| EBS Storage |        $2.40 |
+
+---
+
+## Amazon S3 Storage
+
+Amazon S3 is used for application assets, backups, and static content.
+
+Configuration:
+
+| Resource      | Value    |
+| ------------- | -------- |
+| Storage Class | Standard |
+| Capacity      | 100 GB   |
+
+Estimated Cost:
+
+| Service    | Monthly Cost |
+| ---------- | -----------: |
+| S3 Storage |        $2.50 |
+
+---
+
+## Data Transfer
+
+Outbound internet traffic is estimated at 50 GB per month.
+
+Configuration:
+
+| Resource          | Value       |
+| ----------------- | ----------- |
+| Outbound Transfer | 50 GB/month |
+
+Estimated Cost:
+
+| Service           | Monthly Cost |
+| ----------------- | -----------: |
+| Data Transfer Out |        $4.50 |
+
+---
+
+## Inter-Availability Zone Networking
+
+The application may require communication between resources located in different Availability Zones.
+
+Assumption:
+
+* 50 GB cross-AZ traffic per month
+
+Estimated Cost:
+
+| Service           | Monthly Cost |
+| ----------------- | -----------: |
+| Inter-AZ Transfer |        $1.00 |
+
+---
+
+# Monthly Cost Breakdown
+
+| Service                  | Monthly Cost |
+| ------------------------ | -----------: |
+| EC2 Compute              |       $30.37 |
+| EBS Storage              |        $2.40 |
+| S3 Storage               |        $2.50 |
+| Data Transfer            |        $4.50 |
+| Inter-AZ Traffic         |        $1.00 |
+| **Total Estimated Cost** |   **$40.77** |
+
+---
+
+# AWS Discount Options
+
+## AWS Savings Plans
+
+AWS Savings Plans provide discounted pricing in exchange for a one-year or three-year commitment.
+
+Benefits:
+
+* Flexible across instance types
+* Supports EC2, Lambda, and Fargate
+* Up to 66% savings compared to On-Demand pricing
+
+Suitable for:
+
+* Growing applications
+* Dynamic workloads
+
+---
+
+## Reserved Instances
+
+Reserved Instances provide discounts for committing to specific EC2 configurations.
+
+Benefits:
+
+* Up to 72% savings
+* Predictable budgeting
+* Ideal for stable workloads
+
+Suitable for:
+
+* Long-term production environments
+* Consistent resource utilization
+
+---
+
+# Cost Optimization Recommendations
+
+## 1. Implement AWS Savings Plans
+
+For predictable workloads, adopting a one-year Savings Plan can significantly reduce compute expenses.
+
+Expected Benefit:
+
+* Lower monthly EC2 costs
+* Improved budget predictability
+
+---
+
+## 2. Optimize Resource Utilization
+
+Recommendations:
+
+* Right-size EC2 instances
+* Schedule non-production resources to stop outside business hours
+* Use lower-cost S3 storage classes for infrequently accessed data
+
+Expected Benefit:
+
+* 20–50% reduction in overall monthly cloud costs
+
+---
+
+# Conclusion
+
+The estimated monthly cost of hosting the small web application on AWS is approximately **$40.77 per month**.
+
+AWS offers competitive pricing for Linux workloads, flexible discount programs through Savings Plans, and a mature ecosystem for cloud-native applications. For startups and organizations primarily using open-source technologies, AWS provides a cost-effective and scalable hosting platform.
